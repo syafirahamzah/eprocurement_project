@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+{
+    Schema::table('notifications', function (Blueprint $table) {
+        $table->string('type')->nullable(); // 'negotiation', 'order'
+        $table->unsignedBigInteger('product_id')->nullable();
+        $table->unsignedBigInteger('negotiation_id')->nullable();
+    });
+}
+
+
+public function down()
+{
+    Schema::table('notifications', function (Blueprint $table) {
+        $table->dropColumn(['type', 'product_id', 'negotiation_id']);
+    });
+}
+
+};
