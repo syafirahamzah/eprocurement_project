@@ -59,3 +59,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# cara instal
+using XAMPP\htdocs\
+run di terminal
+cd C;\xampp\htdocs\nama-project
+composer install
+cp .env.example .env
+php artisan key: generate
+
+buka xampp jalankan Apache dan MySQL
+buat database di phpMyAdmin
+php migration serve
+php artisan serve
+
